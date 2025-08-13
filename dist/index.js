@@ -3640,10 +3640,10 @@ class FTPSyncProvider {
     }
     removeFolder(folderPath) {
         return __awaiter(this, void 0, void 0, function* () {
-            const absoluteFolderPath = "/" +  folderPath;
+            
             this.logger.all(`removing folder "${absoluteFolderPath}"`);
             if (this.dryRun === false) {
-                yield (0, utilities_1.retryRequest)(this.logger, () => __awaiter(this, void 0, void 0, function* () { return yield this.client.removeDir(absoluteFolderPath); }));
+                yield (0, utilities_1.retryRequest)(this.logger, () => __awaiter(this, void 0, void 0, function* () { return yield this.client.removeDir(folderPath); }));
             }
             this.logger.verbose(`  completed`);
         });
