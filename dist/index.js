@@ -3641,7 +3641,7 @@ class FTPSyncProvider {
     removeFolder(folderPath) {
         return __awaiter(this, void 0, void 0, function* () {
             
-            this.logger.all(`removing folder "${absoluteFolderPath}"`);
+            this.logger.all(`removing folder "${folderPath}"`);
             if (this.dryRun === false) {
                 yield (0, utilities_1.retryRequest)(this.logger, () => __awaiter(this, void 0, void 0, function* () { return yield this.client.removeDir(folderPath); }));
             }
